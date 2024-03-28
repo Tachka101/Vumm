@@ -1,0 +1,9 @@
+class Meta(type):
+    def __new__(meta, name, bases, classdict):
+        print(f"Creating class {name}")
+        return super().__new__(meta, name, bases, classdict)
+
+class MyClass(object, metaclass=Meta):
+    pass
+
+MyClass()  # Выведет "Creating class MyClass"
